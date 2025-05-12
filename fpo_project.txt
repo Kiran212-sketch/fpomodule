@@ -1,0 +1,23 @@
+
+                                       fpo_project.txt                                                                   Modified
+-- Soft delete FPOs by updating the status instead of actual deletion
+UPDATE fpo SET fpo_status = 'Inactive'
+WHERE fpo_status = 'Active' AND registration_date < '2025-01-01';
+
+-- ================================
+-- 9. Trigger for Data Validation on Insert
+-- ================================
+CREATE OR REPLACE FUNCTION validate_fpo_data()
+RETURNS TRIGGER AS $$
+BE  -- Check if the FPO already exists with the same registration number
+  IF EXISTS (SELECT 1 FROM fpo WHERE registration_number = NEW.registration_number) THEN
+    RAISE EXCEPTION 'Registration number % already exists', NEW.registration_number;
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_validate_fpo_insert
+BEFORE INSERT ON fpo
+FOR EACH ROW
+EXECUTE FUNCTION validate_fpo_data();
