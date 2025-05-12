@@ -1,0 +1,50 @@
+-------------------------------------------------
+FPO Project Overview
+-------------------------------------------------
+
+Project Name: Farmer Producer Organization (FPO)
+
+Description:
+This project focuses on creating a system to manage the Farmer Producer Organizations (FPO). It will include features for registering farmers, managing transactions, and handling data related to agricultural activities.
+
+-------------------------------------------------
+Key Features:
+-------------------------------------------------
+1. **Farmer Registration:**
+   - Farmers can register in the system with details such as name, contact information, and farming details.
+   
+2. **Transaction Management:**
+   - Track sales and purchases made by farmers and generate reports.
+   
+3. **Reporting:**
+   - Generate reports on transactions, farmer details, and financial summaries.
+   
+4. **Admin Dashboard:**
+   - Admin users can manage farmer data, view transactions, and generate reports.
+
+-------------------------------------------------
+TODO List:
+-------------------------------------------------
+- [ ] Finalize Farmer Registration form.
+- [ ] Implement transaction management module.
+- [ ] Create report generation for admin dashboard.
+- [ ] Integrate with payment gateway.
+- [ ] Optimize database queries for performance.
+
+-------------------------------------------------
+Database Configuration:
+-------------------------------------------------
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_USER=your_db_user
+DATABASE_PASSWORD=your_db_password
+DATABASE_NAME=fpo_project
+
+-------------------------------------------------
+Log:
+-------------------------------------------------
+- 12 May 2025: Initial project setup completed.
+- 13 May 2025: Started working on the Farmer Registration form.
+- 14 May 2025: Began implementing the transaction management system.
+
+-------------------------------------------------
